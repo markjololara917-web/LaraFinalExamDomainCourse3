@@ -1,4 +1,5 @@
 <script setup>
+import RecordActions from '../components/RecordActions.vue'
 import { data, deleteEvent, editingEventId, eventForm, events, openAddForm, openEditForm, saveEvent, search, showForm } from './EventsPage.js'
 </script>
 
@@ -29,8 +30,7 @@ import { data, deleteEvent, editingEventId, eventForm, events, openAddForm, open
 							<td>{{ event.organizer }}</td>
 							<td><span class="status-pill">{{ event.status }}</span></td>
 							<td class="row-actions">
-								<button class="action-button" @click="openEditForm(event)">✎</button>
-								<button class="action-button delete-action" @click="deleteEvent(event.id)">×</button>
+								<RecordActions :record="event" @update="openEditForm" @delete="deleteEvent" />
 							</td>
 						</tr>
 						<tr v-if="events.length === 0"><td colspan="6" class="table-empty">No events found.</td></tr>

@@ -1,4 +1,5 @@
 <script setup>
+import RecordActions from '../components/RecordActions.vue'
 import { data, deleteRegistration, editingRegistrationId, openAddForm, openEditForm, registrationForm, registrations, saveRegistration, search, showForm } from './RegistrationsPage.js'
 </script>
 
@@ -17,7 +18,7 @@ import { data, deleteRegistration, editingRegistrationId, openAddForm, openEditF
 						<tr v-for="registration in registrations" :key="registration.id">
 							<td>{{ registration.participant }}</td><td>{{ registration.event }}</td><td>{{ registration.date }}</td>
 							<td><span class="status-pill" :class="registration.status.toLowerCase()">{{ registration.status }}</span></td><td>{{ registration.payment }}</td>
-							<td class="row-actions"><button class="action-button" @click="openEditForm(registration)">✎</button><button class="action-button delete-action" @click="deleteRegistration(registration.id)">×</button></td>
+							<td class="row-actions"><RecordActions :record="registration" @update="openEditForm" @delete="deleteRegistration" /></td>
 						</tr>
 						<tr v-if="registrations.length === 0"><td colspan="6" class="table-empty">No registrations found.</td></tr>
 					</tbody>

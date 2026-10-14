@@ -8,7 +8,7 @@ import { availableVenues, confirmedCount, data, recentRegistrations, upcomingEve
     <div class="welcome-row">
       <div>
         <div class="eyebrow">YOUR CAMPUS, IN MOTION</div>
-        <h1>Good morning, Sam <span class="wave">✳</span></h1>
+        <h1>Good morning, Markjolo <span class="wave">✳</span></h1>
         <p class="page-intro">Here’s what’s happening across your campus today.</p>
       </div>
       <RouterLink class="primary-button" to="/events"><span>＋</span> Create an event</RouterLink>

@@ -1,4 +1,5 @@
 <script setup>
+import RecordActions from '../components/RecordActions.vue'
 import { data, deleteParticipant, editingParticipantId, openAddForm, openEditForm, participantForm, participants, saveParticipant, search, showForm } from './ParticipantsPage.js'
 </script>
 
@@ -16,7 +17,7 @@ import { data, deleteParticipant, editingParticipantId, openAddForm, openEditFor
 					<tbody>
 						<tr v-for="participant in participants" :key="participant.id">
 							<td>{{ participant.name }}</td><td>{{ participant.email }}</td><td>{{ participant.course }}</td><td>{{ participant.year }}</td>
-							<td class="row-actions"><button class="action-button" @click="openEditForm(participant)">✎</button><button class="action-button delete-action" @click="deleteParticipant(participant.id)">×</button></td>
+							<td class="row-actions"><RecordActions :record="participant" @update="openEditForm" @delete="deleteParticipant" /></td>
 						</tr>
 						<tr v-if="participants.length === 0"><td colspan="5" class="table-empty">No participants found.</td></tr>
 					</tbody>

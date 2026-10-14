@@ -1,4 +1,5 @@
 <script setup>
+import RecordActions from '../components/RecordActions.vue'
 import { data, deleteVenue, editingVenueId, openAddForm, openEditForm, saveVenue, search, showForm, venueForm, venues } from './VenuesPage.js'
 </script>
 
@@ -17,7 +18,7 @@ import { data, deleteVenue, editingVenueId, openAddForm, openEditForm, saveVenue
 						<tr v-for="venue in venues" :key="venue.id">
 							<td>{{ venue.name }}</td><td>{{ venue.location }}</td><td>{{ venue.capacity }} seats</td><td>{{ venue.type }}</td>
 							<td><span class="status-pill">{{ venue.status }}</span></td>
-							<td class="row-actions"><button class="action-button" @click="openEditForm(venue)">✎</button><button class="action-button delete-action" @click="deleteVenue(venue.id)">×</button></td>
+							<td class="row-actions"><RecordActions :record="venue" @update="openEditForm" @delete="deleteVenue" /></td>
 						</tr>
 						<tr v-if="venues.length === 0"><td colspan="6" class="table-empty">No venues found.</td></tr>
 					</tbody>

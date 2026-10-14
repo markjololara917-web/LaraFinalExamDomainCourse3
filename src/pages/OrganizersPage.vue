@@ -1,4 +1,5 @@
 <script setup>
+import RecordActions from '../components/RecordActions.vue'
 import { data, deleteOrganizer, editingOrganizerId, openAddForm, openEditForm, organizerForm, organizers, saveOrganizer, search, showForm } from './OrganizersPage.js'
 </script>
 
@@ -16,7 +17,7 @@ import { data, deleteOrganizer, editingOrganizerId, openAddForm, openEditForm, o
 					<tbody>
 						<tr v-for="organizer in organizers" :key="organizer.id">
 							<td>{{ organizer.name }}</td><td>{{ organizer.email }}</td><td>{{ organizer.department }}</td><td>{{ organizer.phone }}</td>
-							<td class="row-actions"><button class="action-button" @click="openEditForm(organizer)">✎</button><button class="action-button delete-action" @click="deleteOrganizer(organizer.id)">×</button></td>
+							<td class="row-actions"><RecordActions :record="organizer" @update="openEditForm" @delete="deleteOrganizer" /></td>
 						</tr>
 						<tr v-if="organizers.length === 0"><td colspan="5" class="table-empty">No organizers found.</td></tr>
 					</tbody>

@@ -8,8 +8,11 @@ Campus Connect is a Vue 3 single-page application for managing student events. V
 - `src/router/index.js`: page URLs and navigation.
 - `src/data.js`: sample records and browser storage.
 - `src/components/AppLayout.vue`: sidebar, header, and routed page outlet.
+- `src/components/RecordActions.vue`: emits `update` and `delete` for a selected record.
 - `src/pages/*Page.vue`: page interfaces and templates.
 - `src/pages/*Page.js`: CRUD functions for the matching page.
+
+Each page handles the emitted record events in its own JavaScript file and saves changes to local storage.
 
 ## Requirements
 

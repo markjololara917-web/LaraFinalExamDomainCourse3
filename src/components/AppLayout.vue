@@ -45,8 +45,8 @@ const navigation = [
           <span class="chevron">⌄</span>
         </div>
         <div class="profile">
-          <div class="avatar avatar-coral">SA</div>
-          <div class="profile-copy"><strong>Sam Admin</strong><small>Event administrator</small></div>
+          <div class="avatar avatar-coral">ML</div>
+          <div class="profile-copy"><strong>Markjolo Lara</strong><small>Event administrator</small></div>
         </div>
       </div>
     </aside>
@@ -58,7 +58,7 @@ const navigation = [
         </div>
         <div class="topbar-actions">
           <span class="today-label">Wednesday, October 14, 2026</span>
-          <div class="avatar avatar-coral top-avatar">SA</div>
+          <div class="avatar avatar-coral top-avatar">ML</div>
         </div>
       </header>
 
